@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 00:00:00 by asayad            #+#    #+#             */
-/*   Updated: 2024/05/15 17:20:46 by asayad           ###   ########.fr       */
+/*   Updated: 2023/12/20 12:38:24 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putstr(char *s, int *p)
 		*p += 6;
 		return ;
 	}
-	(*p) += write(1, s, ft_sstrlen(s));
+	(*p) += write(1, s, ft_strlen(s));
 }
 
 void	ft_putchar(char c, int *p)
@@ -33,7 +33,7 @@ void	ft_ptnbb(long long x, char *base, char c, int *p)
 {
 	size_t	bl;
 
-	bl = ft_sstrlen(base);
+	bl = ft_strlen(base);
 	if (c == 'X')
 		base = "0123456789ABCDEF";
 	if (c != 'p')
@@ -49,7 +49,7 @@ void	ft_ptnbb(long long x, char *base, char c, int *p)
 	ft_putchar(base[x % bl], p);
 }
 
-size_t	ft_sstrlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
